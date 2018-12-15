@@ -7,7 +7,7 @@ https://github.com/StephenGrider/DockerCasts
 
 <br/>
 
-### 09 Dockerizing Multiple Services
+## 09 Dockerizing Multiple Services
 
 <br/>
 
@@ -72,6 +72,20 @@ $ docker-compose ps
                         redis ...                                               
 01-complex_worker_1     npm run dev                 Up                          
 ```
+
+<br/>
+
+## 10 A Continuous Integration Workflow for Multiple Images
+
+   Travis-ci.org -> Environment Vaiables
+
+   DOCKER_ID  
+   DOCKER_PASSWORD
+
+
+DID NOT TESTED !!!
+
+
 
 ---
 
