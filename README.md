@@ -83,9 +83,36 @@ $ docker-compose ps
    DOCKER_PASSWORD
 
 
-DID NOT TESTED !!!
+DID NOT TEST !!!
 
 
+<br/>
+
+### 11 Multi-Container Deployments to AWS
+
+AWS is not interesting for me
+
+<br/>
+
+### 12 Onwards to Kubernetes
+
+    $ kubectl apply -f client-pod.yaml
+    $ kubectl apply -f client-node-port.yaml
+
+    $ kubectl get pods
+    NAME         READY   STATUS    RESTARTS   AGE
+    client-pod   1/1     Running   0          1m
+
+    $ kubectl get services
+    NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+    client-node-port   NodePort    10.100.19.35   <none>        3050:31515/TCP   10m
+    kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          2h
+
+
+    $ minikube ip
+    192.168.99.100
+
+    http://192.168.99.100:31515/
 
 ---
 
