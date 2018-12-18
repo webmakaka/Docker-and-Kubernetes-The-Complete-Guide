@@ -170,6 +170,54 @@ Reconfiguring Docker CLI
     $ eval $(minikube docker-env)
     $ docker ps
 
+<br/>
+
+## 14 A Multi-Container App with Kubernetes
+
+
+<br/>
+
+![Application](/img/pic-14-01.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-14-02.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-14-03.png?raw=true)
+
+    $ cp -R 01-complex/ 03-k8s-local
+    $ cd 03-k8s-local/
+
+
+    $ kubectl get deployment
+    $ kubectl delete deployment client-deployment
+    $ kubectl get services
+    $ kubectl delete service client-node-port
+
+    $ kubectl apply -f k8s
+
+<br/>
+
+![Application](/img/pic-14-04.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-14-05.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-14-06.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-14-07.png?raw=true)
+
+
+    $ kubectl get storageclass
+    $ kubectl describe storageclass
+
 
 ---
 
