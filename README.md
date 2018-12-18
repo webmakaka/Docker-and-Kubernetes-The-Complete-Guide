@@ -218,6 +218,29 @@ Reconfiguring Docker CLI
     $ kubectl get storageclass
     $ kubectl describe storageclass
 
+<br/>
+
+### 22 Designating a PVC in a Pod Template
+
+    $ kubectl apply -f k8s
+    $ kubectl get pv
+    $ kubectl get pvc
+
+
+    $ kubectl create secret generic pgpassword --from-literal PGPASSWORD=12345asdf
+    $ kubectl get secrets
+
+    $ kubectl apply -f k8s
+    service/client-cluster-ip-service unchanged
+    deployment.apps/client-deployment unchanged
+    persistentvolumeclaim/database-persistent-volume-claim unchanged
+    service/postgres-cluster-ip-service unchanged
+    deployment.apps/postgres-deployment configured
+    service/redis-cluster-ip-service unchanged
+    deployment.apps/redis-deployment unchanged
+    service/server-cluster-ip-service unchanged
+    deployment.apps/server-deployment configured
+    deployment.apps/worker-deployment configured
 
 ---
 
