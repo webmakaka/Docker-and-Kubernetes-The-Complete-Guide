@@ -242,6 +242,48 @@ Reconfiguring Docker CLI
     deployment.apps/server-deployment configured
     deployment.apps/worker-deployment configured
 
+<br/>
+
+## 15 Handling Traffic with Ingress Controllers
+
+<br/>
+
+![Application](/img/pic-15-01.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-15-02.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-15-03.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-15-04.png?raw=true)
+
+https://github.com/kubernetes/ingress-nginx
+
+https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployment-command
+
+    $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/mandatory.yaml
+
+https://kubernetes.github.io/ingress-nginx/deploy/#minikube
+
+    $ minikube addons enable ingress
+
+    $ minikube ip
+    192.168.99.100
+
+https://192.168.99.100/
+
+<br/>
+
+![Application](/img/pic-15-05.png?raw=true)
+
+
+    $ minikube dashboard
+
 ---
 
 **Marley**
