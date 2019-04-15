@@ -75,12 +75,20 @@ $ docker-compose ps
 
 ## 10 A Continuous Integration Workflow for Multiple Images
 
-Travis-ci.org -> Environment Vaiables
+<br/>
 
-DOCKER_ID  
- DOCKER_PASSWORD
+![Application](/img/pic-10-01.png?raw=true)
 
-DID NOT TEST !!!
+Travis-ci.org --> OUR Project --> More options --> Settings --> Environment Variables
+
+![Application](/img/pic-10-02.png?raw=true)
+
+    DOCKER_ID marley
+    DOCKER_PASSWORD mypassword
+
+![Application](/img/pic-10-03.png?raw=true)
+
+![Application](/img/pic-10-04.png?raw=true)
 
 <br/>
 
