@@ -94,7 +94,20 @@ Travis-ci.org --> OUR Project --> More options --> Settings --> Environment Vari
 
 ### 11 Multi-Container Deployments to AWS
 
-AWS is not interesting for me
+I do not want to pay money for testing AWS.
+
+![Application](/img/pic-11-01.png?raw=true)
+
+![Application](/img/pic-11-02.png?raw=true)
+
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html
+
+<br/>
+
+Travis-ci.org --> OUR Project --> More options --> Settings --> Environment Variables
+
+    AWS_ACCESS_KEY
+    AWS_SECRET_KEY
 
 <br/>
 
