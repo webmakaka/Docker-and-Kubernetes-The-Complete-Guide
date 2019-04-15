@@ -1,9 +1,7 @@
 # [Stephen Grider] Docker and Kubernetes: The Complete Guide [2018, ENG]
 
-
 **Original src**:  
 https://github.com/StephenGrider/DockerCasts
-
 
 <br/>
 
@@ -23,21 +21,6 @@ https://github.com/StephenGrider/DockerCasts
 
 <br/>
 
-    $ cd 01-complex/client/
-    $ docker build -f Dockerfile.dev .
-    Successfully built 05efd9c2ea0c
-
-    $ cd ../server/
-    $ docker build -f Dockerfile.dev .
-    Successfully built 2a1c5f2e40a7
-
-    $ cd ../worker/
-    $ docker build -f Dockerfile.dev .
-    Successfully built 772a168e89a0
-
-
-<br/>
-
 ![Application](/img/pic-09-04.png?raw=true)
 
 <br/>
@@ -48,43 +31,56 @@ https://github.com/StephenGrider/DockerCasts
 
 ![Application](/img/pic-09-06.png?raw=true)
 
+<br/>
 
-        $ docker-compose up --build
+Stephen forgot to add in docker-compose.yml
+
+<br/>
+
+```
+  worker:
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+```
+
+<br/>
+
+    $ cd 09_Dockerizing_Multiple_Services
+    $ docker-compose up --build
+    $ ctrl^C
+    $ docker-compose up
 
 <br/>
 
 ![Application](/img/pic-09-07.png?raw=true)
 
-
 http://localhost:8080/api/values/current
 
+<br/>
 
-```shell
+```
 $ docker-compose ps
-        Name                     Command            State          Ports        
---------------------------------------------------------------------------------
-01-complex_api_1        npm run dev                 Up                          
-01-complex_client_1     npm run start               Up                          
-01-complex_nginx_1      nginx -g daemon off;        Up      0.0.0.0:8080->80/tcp
-01-complex_postgres_1   docker-entrypoint.sh        Up      5432/tcp            
-                        postgres                                                
-01-complex_redis_1      docker-entrypoint.sh        Up      6379/tcp            
-                        redis ...                                               
-01-complex_worker_1     npm run dev                 Up                          
+                   Name                                  Command               State          Ports
+-----------------------------------------------------------------------------------------------------------
+09_dockerizing_multiple_services_api_1        npm run dev                      Up
+09_dockerizing_multiple_services_client_1     npm run start                    Up
+09_dockerizing_multiple_services_nginx_1      nginx -g daemon off;             Up      0.0.0.0:8080->80/tcp
+09_dockerizing_multiple_services_postgres_1   docker-entrypoint.sh postgres    Up      5432/tcp
+09_dockerizing_multiple_services_redis_1      docker-entrypoint.sh redis ...   Up      6379/tcp
+
 ```
 
 <br/>
 
 ## 10 A Continuous Integration Workflow for Multiple Images
 
-   Travis-ci.org -> Environment Vaiables
+Travis-ci.org -> Environment Vaiables
 
-   DOCKER_ID  
-   DOCKER_PASSWORD
-
+DOCKER_ID  
+ DOCKER_PASSWORD
 
 DID NOT TEST !!!
-
 
 <br/>
 
@@ -114,7 +110,6 @@ AWS is not interesting for me
 
     http://192.168.99.100:31515/
 
-
 <br/>
 
 ## 13 Maintaining Sets of Containers with Deployments
@@ -131,7 +126,7 @@ AWS is not interesting for me
     $ kubectl get deployments
     NAME                DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
     client-deployment   1         1         1            1           1m
-    
+
     $ minikube ip
     192.168.99.100
 
@@ -141,11 +136,9 @@ http://192.168.99.100:31515/
     NAME                                 READY   STATUS    RESTARTS   AGE   IP           NODE
     client-deployment-588947887b-lkqsc   1/1     Running   0          8m    172.17.0.7   minikube
 
-
 <br/>
 
 set replicas: 5
-
 
     $ kubectl get deployments
     NAME                DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
@@ -173,7 +166,6 @@ Reconfiguring Docker CLI
 <br/>
 
 ## 14 A Multi-Container App with Kubernetes
-
 
 <br/>
 
@@ -213,7 +205,6 @@ Reconfiguring Docker CLI
 <br/>
 
 ![Application](/img/pic-14-07.png?raw=true)
-
 
     $ kubectl get storageclass
     $ kubectl describe storageclass
@@ -281,11 +272,10 @@ https://192.168.99.100/
 
 ![Application](/img/pic-15-05.png?raw=true)
 
-
     $ minikube dashboard
 
 ---
 
 **Marley**
 
-<a href="https://jsdev.org">jsdev.org</a>  
+<a href="https://jsdev.org">jsdev.org</a>
