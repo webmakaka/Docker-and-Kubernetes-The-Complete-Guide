@@ -113,23 +113,35 @@ Travis-ci.org --> OUR Project --> More options --> Settings --> Environment Vari
 
 ### 12 Onwards to Kubernetes
 
+    $ minikube start
+
+    $ cd 12_Onwards_to_Kubernetes/
+
     $ kubectl apply -f client-pod.yaml
     $ kubectl apply -f client-node-pod.yaml
 
+<br/>
+
     $ kubectl get pods
     NAME         READY   STATUS    RESTARTS   AGE
-    client-pod   1/1     Running   0          1m
+    client-pod   1/1     Running   0          14s
+
+<br/>
 
     $ kubectl get services
     NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
-    client-node-port   NodePort    10.100.19.35   <none>        3050:31515/TCP   10m
-    kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          2h
+    client-node-port   NodePort    10.97.14.234   <none>        8080:31515/TCP   33s
+    kubernetes         ClusterIP   10.96.0.1      <none>        443/TCP          32m
 
+<br/>
 
-    $ minikube ip
-    192.168.99.100
+    $ echo $(minikube service client-node-port --url)
+    http://192.168.99.117:31515
 
-    http://192.168.99.100:31515/
+<br/>
+
+    $ kubectl delete -f client-pod.yaml
+    $ kubectl delete -f client-node-pod.yaml
 
 <br/>
 
