@@ -293,6 +293,10 @@ set replicas back to: 1
 
 <br/>
 
+    $ minikube addons enable ingress
+
+<br/>
+
 ![Application](/img/pic-15-01.png?raw=true)
 
 <br/>
@@ -315,7 +319,13 @@ https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployme
 
 https://kubernetes.github.io/ingress-nginx/deploy/#minikube
 
-    $ minikube addons enable ingress
+<br/>
+
+    $ cd 15_Handling_Traffic_with_Ingress_Controllers/
+
+    $ kubectl apply -f ingress-service.yaml
+
+<br/>
 
     $ minikube ip
     192.168.99.100
@@ -325,8 +335,6 @@ https://192.168.99.100/
 <br/>
 
 ![Application](/img/pic-15-05.png?raw=true)
-
-    $ minikube dashboard
 
 ---
 
