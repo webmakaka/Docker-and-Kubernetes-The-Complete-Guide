@@ -147,23 +147,17 @@ Travis-ci.org --> OUR Project --> More options --> Settings --> Environment Vari
 
 ## 13 Maintaining Sets of Containers with Deployments
 
-    $ kubectl apply -f client-pod.yaml
-    $ kubectl get pods
-    $ kubectl describe pod client-pod
-
-    $ kubectl delete -f client-pod.yaml
-    $ kubectl get pods
-
+    $ kubectl apply -f client-node-pod.yaml
     $ kubectl apply -f client-deployment.yaml
     $ kubectl get pods
     $ kubectl get deployments
     NAME                DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
     client-deployment   1         1         1            1           1m
 
-    $ minikube ip
-    192.168.99.100
+    $ echo $(minikube service client-node-port --url)
+    http://192.168.99.117:31515
 
-http://192.168.99.100:31515/
+<br/>
 
     $ kubectl get pods -o wide
     NAME                                 READY   STATUS    RESTARTS   AGE   IP           NODE
@@ -171,27 +165,31 @@ http://192.168.99.100:31515/
 
 <br/>
 
+    $ vi client-deployment.yaml
+
 set replicas: 5
 
-    $ kubectl get deployments
-    NAME                DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-    client-deployment   5         6         5            4           20m
-
-    $ kubectl get pods
-    NAME                                READY   STATUS    RESTARTS   AGE
-    client-deployment-9b8bffb65-gzjzg   1/1     Running   0          37s
-    client-deployment-9b8bffb65-mmkwt   1/1     Running   0          43s
-    client-deployment-9b8bffb65-pj8rd   1/1     Running   0          43s
-    client-deployment-9b8bffb65-w8tn7   1/1     Running   0          39s
-    client-deployment-9b8bffb65-xhl9j   1/1     Running   0          43s
+    $ kubectl apply -f client-deployment.yaml
 
 <br/>
 
-Update container:
+    $ kubectl get deployments
+    NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+    client-deployment   5/5     5            5           16m
 
-    $ kubectl set image deployment/client-deployment client=stephengrider/multi-client:v5
+<br/>
 
-Reconfiguring Docker CLI
+set replicas back to: 1
+
+<br/>
+
+**Update container:**
+
+    $ kubectl set image deployment/client-deployment client=marley/multi-client:v5
+
+<br/>
+
+**Reconfiguring Docker CLI**
 
     $ eval $(minikube docker-env)
     $ docker ps
@@ -211,6 +209,8 @@ Reconfiguring Docker CLI
 <br/>
 
 ![Application](/img/pic-14-03.png?raw=true)
+
+<br/>
 
     $ cp -R 01-complex/ 03-k8s-local
     $ cd 03-k8s-local/
