@@ -191,12 +191,28 @@ set replicas back to: 1
 
 **Reconfiguring Docker CLI**
 
+    $ minikube docker-env
+    export DOCKER_TLS_VERIFY="1"
+    export DOCKER_HOST="tcp://192.168.99.117:2376"
+    export DOCKER_CERT_PATH="/home/marley/.minikube/certs"
+    export DOCKER_API_VERSION="1.35"
+    # Run this command to configure your shell:
+    # eval $(minikube docker-env)
+
+<br/>
+
     $ eval $(minikube docker-env)
     $ docker ps
 
 <br/>
 
 ## 14 A Multi-Container App with Kubernetes
+
+<br/>
+
+    $ minikube stop
+    $ minikube delete
+    $ minikube start
 
 <br/>
 
@@ -208,22 +224,11 @@ set replicas back to: 1
 
 <br/>
 
+**Persitence Volume && Persitence Volume Claims**
+
+<br/>
+
 ![Application](/img/pic-14-03.png?raw=true)
-
-<br/>
-
-    $ cp -R 01-complex/ 03-k8s-local
-    $ cd 03-k8s-local/
-
-
-    $ kubectl get deployment
-    $ kubectl delete deployment client-deployment
-    $ kubectl get services
-    $ kubectl delete service client-node-port
-
-    $ kubectl apply -f k8s
-
-<br/>
 
 ![Application](/img/pic-14-04.png?raw=true)
 
@@ -239,32 +244,48 @@ set replicas back to: 1
 
 ![Application](/img/pic-14-07.png?raw=true)
 
+<br/>
+
+![Application](/img/pic-14-08.png?raw=true)
+
+<br/>
+
+    // we will use default minikube storageclass
     $ kubectl get storageclass
     $ kubectl describe storageclass
 
 <br/>
 
-### 22 Designating a PVC in a Pod Template
+    $ cd 14_A_Multi_Container_App_with_Kubernetes
 
-    $ kubectl apply -f k8s
+    $ kubectl apply -f .
     $ kubectl get pv
     $ kubectl get pvc
 
+<br/>
+
+**Environment Variables**
+
+<br/>
+
+![Application](/img/pic-14-09.png?raw=true)
+
+<br/>
+
+![Application](/img/pic-14-10.png?raw=true)
+
+<br/>
+
+**Secrets**
 
     $ kubectl create secret generic pgpassword --from-literal PGPASSWORD=12345asdf
     $ kubectl get secrets
 
-    $ kubectl apply -f k8s
-    service/client-cluster-ip-service unchanged
-    deployment.apps/client-deployment unchanged
-    persistentvolumeclaim/database-persistent-volume-claim unchanged
-    service/postgres-cluster-ip-service unchanged
-    deployment.apps/postgres-deployment configured
-    service/redis-cluster-ip-service unchanged
-    deployment.apps/redis-deployment unchanged
-    service/server-cluster-ip-service unchanged
-    deployment.apps/server-deployment configured
-    deployment.apps/worker-deployment configured
+<br/>
+
+**Final**
+
+    $ kubectl apply -f .
 
 <br/>
 
