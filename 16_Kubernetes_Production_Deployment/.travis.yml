@@ -1,0 +1,60 @@
+sudo: required
+services:
+  - docker
+
+env:
+  global:
+    - SHA=$(git rev-parse HEAD)
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+
+before_install:
+  # string from command line when you encrypt service account by travis cli
+  - openssl aes-256-cbc -K $encrypted_0c35eebf403c_key -iv $encrypted_0c35eebf403c_iv -in service-account.json.enc -out service-account.json -d
+  - curl https://sdk.cloud.google.com | bash > /dev/null;
+  - source $HOME/google-cloud-sdk/path.bash.inc
+  - gcloud components udpate kubectl
+  - gcloud auth activate-service-account --key-file service-account.json
+  # skilful-berm-214822 - project id in google cloud platform
+  - gcloud config set project skilful-berm-214822
+  - gcloud config set compute/zone us-central1-a
+  # milti-cluster  project name
+  - gcloud container clusters get-credentials multi-cluster
+  # DOCKER_PASSWORD and DOCKER_USERNAME - vars inside travis environment
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t marley/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run marley/react-test npm test -- --coverage
+
+deploy:
+  provider: script
+  script: bash ./deploy.sh
+  on:
+    branch: master
+# after_success:
+#   - docker build -t marley/multi-client ./client
+#   - docker build -t marley/multi-nginx ./nginx
+#   - docker build -t marley/multi-server ./server
+#   - docker build -t marley/multi-worker ./worker
+
+#   # Log in to the docker CLI
+#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+#   # Take those images and push them to docker hub
+#   - docker push marley/multi-client
+#   - docker push marley/multi-nginx
+#   - docker push marley/multi-server
+#   - docker push marley/multi-worker
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-west-1"
+#   app: "multi-docker"
+#   env: "MultiDocker-env"
+#   bucket_name: "elasticbeanstalk-us-west-1-3064766"
+#   bucket_path: "docker-multi"
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key:
+#     secure: "$AWS_SECRET_KEY"

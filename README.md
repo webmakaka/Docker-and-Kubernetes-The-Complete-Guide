@@ -336,6 +336,19 @@ https://192.168.99.100/
 
 ![Application](/img/pic-15-05.png?raw=true)
 
+<br/>
+
+    $ minikube stop
+    $ minikube delete
+
+<br/>
+
+## 16 Kubernetes Production Deployment
+
+I will only watch. Do not want to pay for Google Clouds.
+
+<a href="./16_Kubernetes_Production_Deployment/README.md">here</a>
+
 ---
 
 **Marley**
