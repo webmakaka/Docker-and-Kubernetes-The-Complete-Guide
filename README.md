@@ -349,6 +349,12 @@ I will only watch. Do not want to pay for Google Clouds.
 
 <a href="./16_Kubernetes_Production_Deployment/README.md">here</a>
 
+<br/>
+
+## 17 HTTPS Setup with Kubernetes
+
+<a href="./17_HTTPS_Setup_with_Kubernetes/README.md">here</a>
+
 ---
 
 **Marley**
