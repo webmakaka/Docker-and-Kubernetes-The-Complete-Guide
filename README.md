@@ -3,6 +3,10 @@
 **Original src**:  
 https://github.com/StephenGrider/DockerCasts
 
+**[Offtopic]**:  
+Deploy application from video course [Stephen Grider] Docker and Kubernetes: The Complete Guide [2018, ENG] on local kubernetes cluster  
+https://github.com/marley-nodejs/Docker-and-Kubernetes-The-Complete-Guide-Local-Kubernetes-Only
+
 <br/>
 
 ## 09 Dockerizing Multiple Services
