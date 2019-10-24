@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: marley/multi-worker
+          image: techhead/grider-worker
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service

@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: client
-          image: marley/multi-client
+          image: techhead/grider-client
           ports:
             - containerPort: 3000

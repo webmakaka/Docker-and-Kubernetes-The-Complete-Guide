@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: marley/multi-server
+          image: techhead/grider-server
           ports:
             - containerPort: 5000
           env:
