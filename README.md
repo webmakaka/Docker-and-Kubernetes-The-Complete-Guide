@@ -319,7 +319,7 @@ https://github.com/kubernetes/ingress-nginx
 
 https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployment-command
 
-    $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/mandatory.yaml
+    $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
 
 https://kubernetes.github.io/ingress-nginx/deploy/#minikube
 
