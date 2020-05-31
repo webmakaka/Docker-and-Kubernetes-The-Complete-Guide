@@ -223,8 +223,13 @@ https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
 
 ![Kubernetes Google Clouds](/img/pic-16-43.png?raw=true)
 
+<br/>
+
 ---
+
+<br/>
 
 **Marley**
 
-<a href="https://jsdev.org">jsdev.org</a>
+Any questions on eng: https://jsdev.org/chat/  
+Любые вопросы на русском: https://jsdev.ru/chat/

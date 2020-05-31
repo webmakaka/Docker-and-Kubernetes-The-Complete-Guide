@@ -359,8 +359,13 @@ I will only watch. Do not want to pay for Google Clouds.
 
 <a href="./17_HTTPS_Setup_with_Kubernetes/README.md">here</a>
 
+<br/>
+
 ---
+
+<br/>
 
 **Marley**
 
-<a href="https://jsdev.org">jsdev.org</a>
+Any questions on eng: https://jsdev.org/chat/  
+Любые вопросы на русском: https://jsdev.ru/chat/

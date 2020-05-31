@@ -60,8 +60,13 @@ https://docs.cert-manager.io/en/latest/getting-started/install.html#installing-w
 
 ![Kubernetes Google Clouds](/img/pic-17-13.png?raw=true)
 
+<br/>
+
 ---
+
+<br/>
 
 **Marley**
 
-<a href="https://jsdev.org">jsdev.org</a>
+Any questions on eng: https://jsdev.org/chat/  
+Любые вопросы на русском: https://jsdev.ru/chat/
