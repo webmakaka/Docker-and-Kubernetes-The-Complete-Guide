@@ -1,11 +1,11 @@
-# [Stephen Grider] Docker and Kubernetes: The Complete Guide [2018, ENG]
+# [Stephen Grider] Docker and Kubernetes: The Complete Guide [ENG, 2018]
 
 **Original src**:  
 https://github.com/StephenGrider/DockerCasts
 
 **[Offtopic]**:  
 Deploy application from video course [Stephen Grider] Docker and Kubernetes: The Complete Guide [2018, ENG] on local kubernetes cluster  
-https://github.com/marley-nodejs/Docker-and-Kubernetes-The-Complete-Guide-Local-Kubernetes-Only
+https://github.com/webmakaka/Docker-and-Kubernetes-The-Complete-Guide-Deploy-on-Local-Kubernetes-Cluster-Only
 
 <br/>
 
@@ -367,5 +367,5 @@ I will only watch. Do not want to pay for Google Clouds.
 
 **Marley**
 
-Any questions on eng: https://jsdev.org/chat/  
+Any questions in eng: https://jsdev.org/chat/  
 Любые вопросы на русском: https://jsdev.ru/chat/
