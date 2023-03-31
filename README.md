@@ -5,7 +5,7 @@ https://github.com/StephenGrider/DockerCasts
 
 **[Offtopic]**:  
 Deploy application from video course [Stephen Grider] Docker and Kubernetes: The Complete Guide [2018, ENG] on local kubernetes cluster  
-https://github.com/webmak1/Docker-and-Kubernetes-The-Complete-Guide-Deploy-on-Local-Kubernetes-Cluster-Only
+https://github.com/wildmakaka/Docker-and-Kubernetes-The-Complete-Guide-Deploy-on-Local-Kubernetes-Cluster-Only
 
 <br/>
 
